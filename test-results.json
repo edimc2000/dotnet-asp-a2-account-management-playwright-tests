@@ -1,0 +1,142 @@
+{
+  "config": {
+    "configFile": "E:\\Downloads\\JEST 07-19\\jest-unit-0719\\HMRobertSon1\\C#\\exercise-dotnet-asp-a1-minimal-api\\MinimalApi\\Playwright_API_Testing\\playwright.config.ts",
+    "rootDir": "E:/Downloads/JEST 07-19/jest-unit-0719/HMRobertSon1/C#/exercise-dotnet-asp-a1-minimal-api/MinimalApi/Playwright_API_Testing/tests",
+    "forbidOnly": false,
+    "fullyParallel": true,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "reporter": [
+      [
+        "html",
+        {
+          "outputFolder": "E:\\Downloads\\JEST 07-19\\jest-unit-0719\\HMRobertSon1\\C#\\exercise-dotnet-asp-a1-minimal-api\\MinimalApi\\Playwright_API_Testing\\playwright-report",
+          "open": "never"
+        }
+      ],
+      [
+        "json",
+        {
+          "outputFile": "E:\\Downloads\\JEST 07-19\\jest-unit-0719\\HMRobertSon1\\C#\\exercise-dotnet-asp-a1-minimal-api\\MinimalApi\\Playwright_API_Testing\\test-results.json"
+        }
+      ],
+      [
+        "junit",
+        {
+          "outputFile": "E:\\Downloads\\JEST 07-19\\jest-unit-0719\\HMRobertSon1\\C#\\exercise-dotnet-asp-a1-minimal-api\\MinimalApi\\Playwright_API_Testing\\results.xml"
+        }
+      ],
+      [
+        "list",
+        null
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "quiet": false,
+    "projects": [
+      {
+        "outputDir": "E:/Downloads/JEST 07-19/jest-unit-0719/HMRobertSon1/C#/exercise-dotnet-asp-a1-minimal-api/MinimalApi/Playwright_API_Testing/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "chromium",
+        "name": "chromium",
+        "testDir": "E:/Downloads/JEST 07-19/jest-unit-0719/HMRobertSon1/C#/exercise-dotnet-asp-a1-minimal-api/MinimalApi/Playwright_API_Testing/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.57.0",
+    "workers": 16,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "show_all_products_test.spec.ts",
+      "file": "show_all_products_test.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "Test 20: Show all products (from seed) ",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 33,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "Base URL: http://localhost:5220\n"
+                    },
+                    {
+                      "text": "Endpoint: http://localhost:5220/product/show/all\n"
+                    },
+                    {
+                      "text": "Response Status: \u001b[33m200\u001b[39m\n"
+                    },
+                    {
+                      "text": "Response Status Text: OK\n"
+                    },
+                    {
+                      "text": "Response Body: [\n  {\n    productId: \u001b[33m1\u001b[39m,\n    name: \u001b[32m'Classic White T-Shirt'\u001b[39m,\n    description: \u001b[32m'100% cotton crew neck t-shirt, perfect for everyday wear'\u001b[39m,\n    price: \u001b[33m19.99\u001b[39m\n  },\n  {\n    productId: \u001b[33m2\u001b[39m,\n    name: \u001b[32m'Slim Fit Jeans'\u001b[39m,\n    description: \u001b[32m'Dark wash denim jeans with stretch for comfort'\u001b[39m,\n    price: \u001b[33m59.99\u001b[39m\n  },\n  {\n    productId: \u001b[33m3\u001b[39m,\n    name: \u001b[32m'Hooded Sweatshirt'\u001b[39m,\n    description: \u001b[32m'Fleece-lined hoodie with front pocket and adjustable drawstrings'\u001b[39m,\n    price: \u001b[33m44.99\u001b[39m\n  },\n  {\n    productId: \u001b[33m4\u001b[39m,\n    name: \u001b[32m'Oxford Button-Down Shirt'\u001b[39m,\n    description: \u001b[32m'Long-sleeve dress shirt in premium cotton'\u001b[39m,\n    price: \u001b[33m79.99\u001b[39m\n  },\n  {\n    productId: \u001b[33m5\u001b[39m,\n    name: \u001b[32m'Yoga Leggings'\u001b[39m,\n    description: \u001b[32m'High-waisted leggings with moisture-wicking fabric'\u001b[39m,\n    price: \u001b[33m49.99\u001b[39m\n  },\n  {\n    productId: \u001b[33m6\u001b[39m,\n    name: \u001b[32m'Wool Blend Coat'\u001b[39m,\n    description: \u001b[32m'Winter coat with thermal lining and waterproof exterior'\u001b[39m,\n    price: \u001b[33m129.99\u001b[39m\n  },\n  {\n    productId: \u001b[33m7\u001b[39m,\n    name: \u001b[32m'Running Shorts'\u001b[39m,\n    description: \u001b[32m'Lightweight shorts with built-in liner and reflective details'\u001b[39m,\n    price: \u001b[33m34.99\u001b[39m\n  },\n  {\n    productId: \u001b[33m8\u001b[39m,\n    name: \u001b[32m'Cashmere Sweater'\u001b[39m,\n    description: \u001b[32m'Soft, luxurious crew neck sweater for cold weather'\u001b[39m,\n    price: \u001b[33m89.99\u001b[39m\n  },\n  {\n    productId: \u001b[33m9\u001b[39m,\n    name: \u001b[32m'Chino Pants'\u001b[39m,\n    description: \u001b[32m'Casual trousers in khaki with modern slim fit'\u001b[39m,\n    price: \u001b[33m54.99\u001b[39m\n  },\n  {\n    productId: \u001b[33m10\u001b[39m,\n    name: \u001b[32m'Maxi Dress'\u001b[39m,\n    description: \u001b[32m'Floral print dress with flowy silhouette and side slits'\u001b[39m,\n    price: \u001b[33m69.99\u001b[39m\n  },\n  {\n    productId: \u001b[33m11\u001b[39m,\n    name: \u001b[32m'Leather Jacket'\u001b[39m,\n    description: \u001b[32m'Genuine leather motorcycle-style jacket'\u001b[39m,\n    price: \u001b[33m199.99\u001b[39m\n  },\n  {\n    productId: \u001b[33m12\u001b[39m,\n    name: \u001b[32m'Athletic Socks (3-pack)'\u001b[39m,\n    description: \u001b[32m'Breathable socks with arch support for sports'\u001b[39m,\n    price: \u001b[33m16.99\u001b[39m\n  },\n  {\n    productId: \u001b[33m13\u001b[39m,\n    name: \u001b[32m'Swim Trunks'\u001b[39m,\n    description: \u001b[32m'Quick-dry shorts with mesh liner and UPF 50 protection'\u001b[39m,\n    price: \u001b[33m39.99\u001b[39m\n  },\n  {\n    productId: \u001b[33m14\u001b[39m,\n    name: \u001b[32m'Silk Blouse'\u001b[39m,\n    description: \u001b[32m'Elegant blouse with French cuffs and delicate buttons'\u001b[39m,\n    price: \u001b[33m89.99\u001b[39m\n  },\n  {\n    productId: \u001b[33m15\u001b[39m,\n    name: \u001b[32m'Beanie Hat'\u001b[39m,\n    description: \u001b[32m'Knit wool hat for winter warmth in assorted colors'\u001b[39m,\n    price: \u001b[33m24.99\u001b[39m\n  }\n]\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-01-07T20:24:51.151Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "00b1e84b119efdab994f-ea8b7f019d8e6a61df38",
+          "file": "show_all_products_test.spec.ts",
+          "line": 5,
+          "column": 5
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-01-07T20:24:50.435Z",
+    "duration": 780.468,
+    "expected": 1,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  }
+}

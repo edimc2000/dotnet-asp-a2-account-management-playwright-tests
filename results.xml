@@ -1,0 +1,105 @@
+<testsuites id="" name="" tests="1" failures="0" skipped="0" errors="0" time="0.7804679999999999">
+<testsuite name="show_all_products_test.spec.ts" timestamp="2026-01-07T20:24:50.451Z" hostname="chromium" tests="1" failures="0" skipped="0" time="0.033" errors="0">
+<testcase name="Test 20: Show all products (from seed) " classname="show_all_products_test.spec.ts" time="0.033">
+<system-out>
+<![CDATA[Base URL: http://localhost:5220
+Endpoint: http://localhost:5220/product/show/all
+Response Status: [33m200[39m
+Response Status Text: OK
+Response Body: [
+  {
+    productId: [33m1[39m,
+    name: [32m'Classic White T-Shirt'[39m,
+    description: [32m'100% cotton crew neck t-shirt, perfect for everyday wear'[39m,
+    price: [33m19.99[39m
+  },
+  {
+    productId: [33m2[39m,
+    name: [32m'Slim Fit Jeans'[39m,
+    description: [32m'Dark wash denim jeans with stretch for comfort'[39m,
+    price: [33m59.99[39m
+  },
+  {
+    productId: [33m3[39m,
+    name: [32m'Hooded Sweatshirt'[39m,
+    description: [32m'Fleece-lined hoodie with front pocket and adjustable drawstrings'[39m,
+    price: [33m44.99[39m
+  },
+  {
+    productId: [33m4[39m,
+    name: [32m'Oxford Button-Down Shirt'[39m,
+    description: [32m'Long-sleeve dress shirt in premium cotton'[39m,
+    price: [33m79.99[39m
+  },
+  {
+    productId: [33m5[39m,
+    name: [32m'Yoga Leggings'[39m,
+    description: [32m'High-waisted leggings with moisture-wicking fabric'[39m,
+    price: [33m49.99[39m
+  },
+  {
+    productId: [33m6[39m,
+    name: [32m'Wool Blend Coat'[39m,
+    description: [32m'Winter coat with thermal lining and waterproof exterior'[39m,
+    price: [33m129.99[39m
+  },
+  {
+    productId: [33m7[39m,
+    name: [32m'Running Shorts'[39m,
+    description: [32m'Lightweight shorts with built-in liner and reflective details'[39m,
+    price: [33m34.99[39m
+  },
+  {
+    productId: [33m8[39m,
+    name: [32m'Cashmere Sweater'[39m,
+    description: [32m'Soft, luxurious crew neck sweater for cold weather'[39m,
+    price: [33m89.99[39m
+  },
+  {
+    productId: [33m9[39m,
+    name: [32m'Chino Pants'[39m,
+    description: [32m'Casual trousers in khaki with modern slim fit'[39m,
+    price: [33m54.99[39m
+  },
+  {
+    productId: [33m10[39m,
+    name: [32m'Maxi Dress'[39m,
+    description: [32m'Floral print dress with flowy silhouette and side slits'[39m,
+    price: [33m69.99[39m
+  },
+  {
+    productId: [33m11[39m,
+    name: [32m'Leather Jacket'[39m,
+    description: [32m'Genuine leather motorcycle-style jacket'[39m,
+    price: [33m199.99[39m
+  },
+  {
+    productId: [33m12[39m,
+    name: [32m'Athletic Socks (3-pack)'[39m,
+    description: [32m'Breathable socks with arch support for sports'[39m,
+    price: [33m16.99[39m
+  },
+  {
+    productId: [33m13[39m,
+    name: [32m'Swim Trunks'[39m,
+    description: [32m'Quick-dry shorts with mesh liner and UPF 50 protection'[39m,
+    price: [33m39.99[39m
+  },
+  {
+    productId: [33m14[39m,
+    name: [32m'Silk Blouse'[39m,
+    description: [32m'Elegant blouse with French cuffs and delicate buttons'[39m,
+    price: [33m89.99[39m
+  },
+  {
+    productId: [33m15[39m,
+    name: [32m'Beanie Hat'[39m,
+    description: [32m'Knit wool hat for winter warmth in assorted colors'[39m,
+    price: [33m24.99[39m
+  }
+]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+</testsuites>
