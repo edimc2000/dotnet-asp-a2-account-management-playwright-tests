@@ -45,14 +45,38 @@ export const seedUsers: User[] = [
 ];
 
 export const testNonExistentEmails: EmailFormat[] = [
-    `ecabangon@prolink2u.com`,
-    `alex.miller@innovation-labs.tech`,
-    `sarah.connor@future-systems.ai`,
-    `mike.jones@digital-workspace.io`,
-    `lisa.wang@creative-studio.design`,
-    `robert.chen@analytics-hub.data`,
-    `emily.davis@learning-academy.edu`,
-    `thomas.wilson@secure-network.vpn`,
-    `olivia.martin@health-care.med`,
-    `daniel.lee@finance-group.bank`
+  `ecabangon@prolink2u.com`,
+  `alex.miller@innovation-labs.tech`,
+  `sarah.connor@future-systems.ai`,
+  `mike.jones@digital-workspace.io`,
+  `lisa.wang@creative-studio.design`,
+  `robert.chen@analytics-hub.data`,
+  `emily.davis@learning-academy.edu`,
+  `thomas.wilson@secure-network.vpn`,
+  `olivia.martin@health-care.med`,
+  `daniel.lee@finance-group.bank`
 ];
+
+
+export const addNewUniqueUsers = [
+  {
+    "firstName": "Rodney",
+    "lastName": "Cabella",
+    "emailAddress": "rc1@noemail.com",
+  }, 
+  {
+    "firstName": "Martin",
+    "lastName": "Suludo",
+    "emailAddress": "ms@noemail.com",
+  }, 
+
+  {
+    "firstName": "Terry",
+    "lastName": "Vizconde",
+    "emailAddress": "tv@noemail.com",
+  }, 
+]
+
+export const headers = {
+                'Content-Type': 'application/json',
+            }

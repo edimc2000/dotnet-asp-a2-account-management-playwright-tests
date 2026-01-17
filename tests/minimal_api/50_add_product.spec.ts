@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test';
-import { Product, ApiResult, ProductResponse } from './ApiInterfaces';
-import { baseURL, divider } from '../dev_environment';
+import { Product, ApiResult, ProductResponse } from '../ApiInterfaces';
+import { baseURL, divider } from '../../dev_environment';
 
 test('Test 50: Sending JSON data Price as string (valid - parsable)',
     async ({ request }) => {

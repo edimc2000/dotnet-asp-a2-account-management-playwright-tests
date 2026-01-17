@@ -72,6 +72,7 @@ test('TC 12: Search by Id: Using a valid and existing account Ids (seed data)',
             // const account = JSON.stringify(responseData.data[0]);
             const account = responseData.data[0];
 
+            
             divider()
             console.log('Response Status:', response.status())
             console.log('Response Status Text:', response.statusText())
@@ -81,13 +82,13 @@ test('TC 12: Search by Id: Using a valid and existing account Ids (seed data)',
             expect(account).toEqual(seedUser)
 
             // validate response status 
-            expect(response.status()).toBe(200)
+            expect.soft(response.status()).toBe(200)
             // validate response text 
-            expect(response.statusText()).toEqual('OK')
+            expect.soft(response.statusText()).toEqual('OK')
             // validate response body - success - value 
-            expect(responseData.success).toBe(true)
+            expect.soft(responseData.success).toBe(true)
             // validate  response body - message - value 
-            expect(responseData.message).toEqual("Account retrieved successfully")
+            expect.soft(responseData.message).toEqual("Account retrieved successfully")
         }
     });
 
@@ -182,7 +183,25 @@ test('TC 15: Search by Id: Validate response 405 for HTTP POST/PUT',
     }
 );
 
-test('TC 16: Search by Email: Using valid and existing accounts (using seed)',
+
+test('TC 16: Search by id: Validate response 404 for missing email string',
+    async ({ request }) => {
+        
+        const endpoint = `${part2BaseURL}/account/search/id/`
+        let response = await request.get(endpoint)
+        // const responseData: AccountResponse = await response.json()
+        // const data = responseData.data
+
+        divider()
+        console.log('Response Status:', response.status())
+        console.log('Response Status Text:', response.statusText())
+        expect.soft(response.status()).toEqual(404)
+
+     }
+);
+
+
+test('TC 17: Search by Email: Using valid and existing accounts (using seed)',
     async ({ request }) => {
         for (let index = 0; index < seedUsers.length; index++) {
             const seedUser = seedUsers[index]
@@ -205,7 +224,7 @@ test('TC 16: Search by Email: Using valid and existing accounts (using seed)',
     }
 );
 
-test('TC 17: Search by Email: Using non existent accounts ()',
+test('TC 18: Search by Email: Using non existent accounts',
     async ({ request }) => {
         for (let index = 0; index < testNonExistentEmails.length; index++) {
             const endpoint = `${part2BaseURL}/account/search/email/${testNonExistentEmails[index]}`
@@ -227,7 +246,8 @@ test('TC 17: Search by Email: Using non existent accounts ()',
 
 
 
-test('TC 18: Search by Email: Validate response 405 for HTTP POST or PUT (no content yet)',
+
+test('TC 19: Search by Email: Validate response 405 for HTTP POST or PUT',
     async ({ request }) => {
         const endpoint = `${part2BaseURL}/account/search/email/20`
         let response = await request.put(endpoint)
@@ -239,7 +259,7 @@ test('TC 18: Search by Email: Validate response 405 for HTTP POST or PUT (no con
     }
 );
 
-test('TC 19: Search by Email: Using partial string search (assertion using seed data)',
+test('TC 20: Search by Email: Using partial string search (assertion using seed data)',
     async ({ request }) => {
         let partialString = 'g'
 
@@ -256,5 +276,18 @@ test('TC 19: Search by Email: Using partial string search (assertion using seed 
         console.log('Response Body:', responseData)
         expect.soft(response.status()).toEqual(200)
         expect.soft(data.length).toEqual(3)
+     }
+);
+
+test('TC 21: Search by Email: Validate response 404 missing email string',
+    async ({ request }) => {
+        const endpoint = `${part2BaseURL}/account/search/email/`
+        let response = await request.get(endpoint)
+
+        divider()
+        console.log('Response Status:', response.status())
+        console.log('Response Status Text:', response.statusText())
+        expect.soft(response.status()).toEqual(404)
+
      }
 );
