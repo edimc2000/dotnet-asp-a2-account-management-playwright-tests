@@ -80,3 +80,66 @@ export const addNewUniqueUsers = [
 export const headers = {
                 'Content-Type': 'application/json',
             }
+
+
+export const negativeData = [
+  {
+    "firstName": "",
+    "lastName": "Cabella",
+    "emailAddress": "rc1@noemail.com",
+  }, 
+  {
+    "firstName": "Martin",
+    "lastName": "",
+    "emailAddress": "ms@noemail.com",
+  }, 
+
+  {
+    "firstName": "Terry",
+    "lastName": "Vizconde",
+    "emailAddress": "",
+  }, 
+
+    {
+    "firstName": "Solita",
+    "lastName": "Kramer",
+    "emailAddress": "@gmail.com",
+  }, 
+
+
+      {
+    "firstName": "",
+    "lastName": "",
+    "emailAddress": "",
+  }, 
+]
+
+export const assertCustom400Messages = [
+'Validation failed: The FirstName field is required.', 
+'Validation failed: The LastName field is required.', 
+'Validation failed: The EmailAddress field is required.', 
+'Validation failed: The EmailAddress field is not a valid e-mail address.', 
+'Validation failed: The FirstName field is required.; The LastName field is required.; The EmailAddress field is required.'
+
+]
+
+
+export const negativeMalformed = [
+  `{
+    "firstName": "",
+    "lastName": "Cabella",
+    emailAddress": "rc1@noemail.com",
+  }`]
+
+
+  export const singleRandom1to50 = () => Math.floor(Math.random() * 50) + 1
+
+  const randomNum = singleRandom1to50()
+  export const updateCombinations= {
+    "updateAll": `{
+      "firstName": "firstNameTest${randomNum}",
+      "lastName": "lastNameTest${randomNum}",
+      "emailAddress": "${randomNum}EmailTest@gmail.com"
+       }`
+  }
+
