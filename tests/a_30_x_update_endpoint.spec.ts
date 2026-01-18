@@ -122,7 +122,6 @@ test.describe('Update Endpoint HTTP 400', () => {
         async ({ request }) => {
 
             let id = 205
-            const uri = '/account/search/id/'
             const endpoint = `${part2BaseURL}${updateUsingIdEndpointUrl}${id}`
 
             const response = await request.patch(endpoint,
@@ -143,6 +142,32 @@ test.describe('Update Endpoint HTTP 400', () => {
             expect.soft(responseData.success).toBe(false)
             expect.soft(responseData.message).toBe('Request body is empty')
         })
+
+        test.only('TC 30a-2: updating a restricted account',
+        async ({ request }) => {
+
+            let id = 203
+            const endpoint = `${part2BaseURL}${updateUsingIdEndpointUrl}${id}`
+
+            const response = await request.patch(endpoint,
+                {
+                    headers: headers,
+                     data: updateCombinations.randomUpdateAll
+                })
+
+            const responseData = await response.json();
+            divider()
+            console.log(`Second update `)
+            console.log('Response Status:', response.status())
+            console.log('Response Status Text:', response.statusText())
+            console.log('Response Body:', responseData)
+
+            expect.soft(response.status()).toBe(400)
+            expect.soft(response.statusText()).toBe('Bad Request')
+            expect.soft(responseData.success).toBe(false)
+            expect.soft(responseData.message).toBe(`Account ID '${id}' is restricted and cannot be updated`)
+        })
+
 
 })
 
