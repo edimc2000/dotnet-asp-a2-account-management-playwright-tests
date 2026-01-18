@@ -188,7 +188,7 @@ test.describe('Search by Id Endpoint HTTP 405', () => {
 })
 
 test.describe('Search by Id Endpoint HTTP 404', () => {
-    test('TC 16: Validate response 404 for missing email string',
+    test('TC 16: Validate response 404 for missing id string',
         async ({ request }) => {
 
             const endpoint = `${part2BaseURL}/account/search/id/`
