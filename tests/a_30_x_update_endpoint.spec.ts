@@ -143,7 +143,7 @@ test.describe('Update Endpoint HTTP 400', () => {
             expect.soft(responseData.message).toBe('Request body is empty')
         })
 
-        test.only('TC 30a-2: updating a restricted account',
+        test('TC 30a-2: updating a restricted account',
         async ({ request }) => {
 
             let id = 203
