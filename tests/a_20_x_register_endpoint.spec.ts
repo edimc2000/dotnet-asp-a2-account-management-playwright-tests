@@ -1,11 +1,12 @@
-import { test, expect } from '@playwright/test';
-import { Product, ApiResult, ProductResponse, AccountResponse } from './ApiInterfaces';
-import { baseURL, divider, part2BaseURL } from '../dev_environment';
-import { addNewUniqueUsers, headers, negativeData, assertCustom400Messages, negativeMalformed } from '../test_data';
+import { test, expect } from '@playwright/test'
+import { Product, ApiResult, ProductResponse, AccountResponse } from './ApiInterfaces'
+import { baseURL, divider, part2BaseURL } from '../dev_environment'
+import { addNewUniqueUsers, headers, negativeData, assertCustom400Messages, negativeMalformed } from '../test_data'
 
-test.describe.configure({ mode: 'serial' });
+test.describe.configure({ mode: 'serial' })
 
-test('TC 20: Register: With valid accounts - 201 ',
+test.describe('Register Endpoint', () => {
+test('TC 20: HTTP 201: Register using valid accounts  ',
     async ({ request }) => {
         let locationHeader
         const uri = '/account/search/id/'
@@ -20,8 +21,8 @@ test('TC 20: Register: With valid accounts - 201 ',
                     data: addNewUniqueUsers[index]
                 })
 
-            const responseData = await response.json();
-            const account = responseData.data;
+            const responseData = await response.json()
+            const account = responseData.data
 
             if (response.status() === 201) {
                 locationHeader = response.headers()['location'] || 'Not present';
@@ -43,12 +44,12 @@ test('TC 20: Register: With valid accounts - 201 ',
     })
 
 
-test('TC 21: Register: With emails which are already registered - 409',
+test('TC 21: HTTP 409: Register using emails that are already registered',
     async ({ request }) => {
         const uri = '/account/search/id/'
 
         for (let index = 0; index < addNewUniqueUsers.length; index++) {
-            const newUser = addNewUniqueUsers[index];
+            const newUser = addNewUniqueUsers[index]
             const endpoint = `${part2BaseURL}/account/register`
 
             const response = await request.post(endpoint,
@@ -57,8 +58,8 @@ test('TC 21: Register: With emails which are already registered - 409',
                     data: addNewUniqueUsers[index]
                 })
 
-            const responseData = await response.json();
-            const account = responseData.data;
+            const responseData = await response.json()
+            const account = responseData.data
 
             divider()
             console.log('Response Status:', response.status())
@@ -74,7 +75,7 @@ test('TC 21: Register: With emails which are already registered - 409',
     })
 
 
-test('TC 22: Register: With empty fields, firstname, lastname, email  - 400',
+test('TC 22: HTTP 400: Register with empty fields, firstname, lastname, email',
     async ({ request }) => {
         const uri = '/account/search/id/'
         for (let index = 0; index < negativeData.length; index++) {
@@ -87,8 +88,8 @@ test('TC 22: Register: With empty fields, firstname, lastname, email  - 400',
                     data: negativeData[index]
                 })
 
-            const responseData = await response.json();
-            const account = responseData.data;
+            const responseData = await response.json()
+            const account = responseData.data
 
             divider()
             console.log('Response Status:', response.status())
@@ -105,7 +106,7 @@ test('TC 22: Register: With empty fields, firstname, lastname, email  - 400',
 
 
 
-test('TC 23: Register: missing json on body  - 400',
+test('TC 23: HTTP 400: Register with missing JSON on body',
     async ({ request }) => {
         const uri = '/account/search/id/'
         const endpoint = `${part2BaseURL}/account/register`
@@ -114,8 +115,8 @@ test('TC 23: Register: missing json on body  - 400',
                 headers: headers,
             })
 
-        const responseData = await response.json();
-        const account = responseData.data;
+        const responseData = await response.json()
+        const account = responseData.data
 
         divider()
         console.log('Response Status:', response.status())
@@ -130,7 +131,7 @@ test('TC 23: Register: missing json on body  - 400',
     })
 
 
-test('TC 24: Register: malformed json  - 422',
+test('TC 24: HTTP 422: Register with malformed JSON',
     async ({ request }) => {
         const uri = '/account/search/id/'
         const endpoint = `${part2BaseURL}/account/register`
@@ -140,8 +141,8 @@ test('TC 24: Register: malformed json  - 422',
                 data: negativeMalformed
             })
 
-        const responseData = await response.json();
-        const account = responseData.data;
+        const responseData = await response.json()
+        const account = responseData.data
 
         divider()
         console.log('Response Status:', response.status())
@@ -154,3 +155,5 @@ test('TC 24: Register: malformed json  - 422',
         expect.soft(responseData.success).toBe(false)
         expect.soft(responseData.message).toBe('Malformed JSON in request body')
     })
+
+})
