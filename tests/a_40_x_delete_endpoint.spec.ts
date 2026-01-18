@@ -57,7 +57,7 @@ test.describe('Delete Endpoint', () => {
 
             }
         })
-    test.only('TC 42: HTTP 400: Delete restricted accounts 200, 201, 202, 203',
+    test('TC 42: HTTP 400: Delete restricted accounts 200, 201, 202, 203',
         async ({ request }) => {
             let ids = [200, 201, 202, 203]
 
